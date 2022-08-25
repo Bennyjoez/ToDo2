@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container">
+        <div id="search">
+            <input type="text" id="searchParameter" placeholder="Search">
+        </div>
+        <h1>What's on Your Schedule</h1>
+        <div class="secContainer" id="list">
+            <div class="content">
+                <h2 class="number"></h2>
+                <div class="details">
+                    <h2 class="name">Push to github</h2>
+                    <p class="description">You are supposed to push the code edited to github</p>
+                </div>
+                <div class="buttons">
+                    <button class="delete">Delete</button>
+                    <button class="edit">Edit</button>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="number"></h2>
+                <div class="details">
+                    <h2 class="name">Push to github</h2>
+                    <p class="description">You are supposed to push the code edited to github</p>
+                </div>
+                <div class="buttons">
+                    <button class="delete">Delete</button>
+                    <button class="edit">Edit</button>
+                </div>
+            </div>
+        </div>
+        <div id="addTask">
+            <input type="text" id="title" placeholder="Title of task">
+            <textarea id="description" cols="30" rows="2" placeholder="Description of the task"></textarea>
+            <button id="post">Add Task</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    background-image: linear-gradient(rgb(21, 50, 71), rgb(69, 2, 2));
+    min-height: 100vh;
+    width: 100vw;
+    color: bisque;
+
+}
+
+.container {
+    height: fit-content;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.secContainer  {
+    width: 80vw;
+    height: fit-content;
+    margin: 50px auto;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+/* the buttons */
+button:hover {
+    cursor: pointer;
+}
+button {
+    height: fit-content;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.delete {
+    background-color: red;
+}
+
+.edit {
+    background: green;
+}
+
+/* end of buttons */
+
+/* start of the add task */
+
+input {
+    line-height: 30px;
+    text-align: center;
+}
+
+#addTask {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#post {
+    background-color: blueviolet;
+    border-style: none;
+}
+/* end of the add task */
+
+
+/* edit tab */
+#change {
+    background-color: green;
+}
