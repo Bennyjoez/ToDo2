@@ -80,7 +80,7 @@ addTaskBtn.addEventListener('click', function (e) {
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
 
-    if(title !== "" && description !== "") {
+    if(title.length > 2 && description.length > 2) {
         let content = `     <h2 class="number"></h2>
         <div class="details">
             <h2 class="name">${title}</h2>
