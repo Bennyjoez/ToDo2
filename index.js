@@ -10,7 +10,7 @@ list.addEventListener('click', function (e) {
     // delete 
         // after delete the numbering of the items needs to be updated
     if(e.target.textContent == "Delete") {
-        e.target.parentElement.parentElement.remove()
+        e.target.parentElement.parentElement.remove();
         assignNumbers();
     }
 
