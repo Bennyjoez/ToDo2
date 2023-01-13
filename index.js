@@ -38,8 +38,7 @@ list.addEventListener('click', function (e) {
         editTab.children[1].value = titleToEdit;
         editTab.children[2].value = description;
         // victim.appendChild(editTab)
-        list.replaceChild(editTab, victim)
-        console.log(editTab.children);
+        list.replaceChild(editTab, victim);
 
         // posting changes
         let confirmBtn  = document.getElementById('change')
