@@ -90,32 +90,15 @@ addTaskBtn.addEventListener('click', function (e) {
         const renderArr = JSON.parse(localStorage.getItem("toDo-data"));           //access the data from local storage
         
         // create elements
-        list.innerHTML = ""
-
-        for(let each of renderArr) {
-            let content = `     <h2 class="number"></h2>
-            <div class="details">
-                <h2 class="name">${each[0]}</h2>
-                <p class="description">${each[1]}</p>
-            </div>
-            <div class="buttons">
-                <button class="delete">Delete</button>
-                <button class="edit">Edit</button>
-            </div>`
-            
-            // append the elements
-            let newContent = document.createElement('div');
-            newContent.classList.add('content');
-            newContent.innerHTML = content;
-            list.appendChild(newContent);
-        }
+        // list.innerHTML = ""
+        updateDisplay();
 
 
         document.getElementById('description').value = "";
         document.getElementById('title').value = ""
 
 
-        assignNumbers();
+        // assignNumbers();
     }
     else if (title !== "" && description == "") {
         alert(`Input a Description`)
@@ -125,6 +108,33 @@ addTaskBtn.addEventListener('click', function (e) {
     }
 
 })
+
+function updateDisplay() {
+    const renderArr = JSON.parse(localStorage.getItem("toDo-data"))
+
+    list.innerHTML = "";
+    for(let each of renderArr) {
+        let content = `     <h2 class="number"></h2>
+        <div class="details">
+            <h2 class="name">${each[0]}</h2>
+            <p class="description">${each[1]}</p>
+        </div>
+        <div class="buttons">
+            <button class="delete">Delete</button>
+            <button class="edit">Edit</button>
+        </div>`
+        
+        // append the elements
+        let newContent = document.createElement('div');
+        newContent.classList.add('content');
+        newContent.innerHTML = content;
+        list.appendChild(newContent);
+    }
+
+    assignNumbers()
+}
+
+window.addEventListener("DOMContentLoaded", updateDisplay);
 
 
 
