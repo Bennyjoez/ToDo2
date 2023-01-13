@@ -3,6 +3,8 @@ let search = document.getElementById('searchParameter')
 let addTaskBtn = document.getElementById('post');
 let editBtn =document.getElementsByClassName('edit');
 
+const dataArray = [];
+
 
 list.addEventListener('click', function (e) {
     // delete 
@@ -81,19 +83,33 @@ addTaskBtn.addEventListener('click', function (e) {
     let description = document.getElementById('description').value;
 
     if(title.length > 2 && description.length > 2) {
-        let content = `     <h2 class="number"></h2>
-        <div class="details">
-            <h2 class="name">${title}</h2>
-            <p class="description">${description}</p>
-        </div>
-        <div class="buttons">
-            <button class="delete">Delete</button>
-            <button class="edit">Edit</button>
-        </div>`
-        let newContent = document.createElement('div');
-        newContent.classList.add('content');
-        newContent.innerHTML = content;
-        list.appendChild(newContent);
+
+        // add input data to a list array
+        dataArray.push([title, description]);
+        localStorage.setItem("toDo-data", JSON.stringify(dataArray));
+        const renderArr = JSON.parse(localStorage.getItem("toDo-data"));           //access the data from local storage
+        
+        // create elements
+        list.innerHTML = ""
+
+        for(let each of renderArr) {
+            let content = `     <h2 class="number"></h2>
+            <div class="details">
+                <h2 class="name">${each[0]}</h2>
+                <p class="description">${each[1]}</p>
+            </div>
+            <div class="buttons">
+                <button class="delete">Delete</button>
+                <button class="edit">Edit</button>
+            </div>`
+            
+            // append the elements
+            let newContent = document.createElement('div');
+            newContent.classList.add('content');
+            newContent.innerHTML = content;
+            list.appendChild(newContent);
+        }
+
 
         document.getElementById('description').value = "";
         document.getElementById('title').value = ""
