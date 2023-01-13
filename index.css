@@ -80,3 +80,11 @@ input {
 #change {
     background-color: green;
 }
+
+
+@media (max-width: 450px) {
+    #addTask {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
