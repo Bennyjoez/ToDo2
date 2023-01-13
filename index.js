@@ -93,7 +93,6 @@ addTaskBtn.addEventListener('click', function (e) {
         const renderArr = JSON.parse(localStorage.getItem("toDo-data"));           //access the data from local storage
         
         // create elements
-        // list.innerHTML = ""
         updateDisplay();
 
 
