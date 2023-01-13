@@ -82,7 +82,10 @@ addTaskBtn.addEventListener('click', function (e) {
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
 
-    if(title.length > 2 && description.length > 2) {
+    if(title.length < 3 || description.length < 3) {
+        alert("Please enter at least three characters for a title and a description");
+    } 
+    else if (title.length > 2 && description.length > 2) {
 
         // add input data to a list array
         dataArray.push([title, description]);
